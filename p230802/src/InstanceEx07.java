@@ -33,6 +33,10 @@ public class InstanceEx07 {
 	}
 
 	public static void main(String[] args) {
+		/*
+		 * [문제]
+		 * 메서드를 호출 할 때, 생산년도와 이름을 입력하세요
+		 */
 		// 지역 변수 : local variable
 		Robot robot = constructRobot(2003, "페퍼");
 //		System.out.println("참조변수 robot에 저장된 주소 >> " + robot);
