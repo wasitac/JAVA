@@ -22,27 +22,34 @@ public class ArrayEx02 {
 				System.out.print(arr2[i][j] + " ");
 			System.out.println();
 		}
-		
+
 		// length변수 써서
 		for (int i = 0; i < arr2.length; i++) {
 			for (int j = 0; j < arr2[0].length; j++)
 				System.out.print(arr2[i][j] + " ");
 			System.out.println();
 		}
-		
+
 		// 향상된 for문
-		for (int i : arr2[0])
-			System.out.print(i + " ");
-		System.out.println();
-		for (int i : arr2[1])
-			System.out.print(i + " ");
-		System.out.println();
-		
+//		for (int i : arr2[0])
+//			System.out.print(i + " ");
+//		System.out.println();
+//		for (int i : arr2[1])
+//			System.out.print(i + " ");
+//		System.out.println();
+
+		// 향상된 for문 수정
+		for (int[] i : arr2) {
+			for (int j : i)
+				System.out.print(j + " ");
+			System.out.println();
+		}
+
 		// 2차원 배열은 1차원 배열이 여러개 있는것. 1차원 배열의 주소들을 저장해놓은 배열이 있는것
-		System.out.println(arr2);
-		System.out.println(arr2[0]);
-		System.out.println(arr2[1]);
-		
+		System.out.println("행의 길이 arr2 >> " + arr2.length);
+		System.out.println("인덱스 0행-열의 길이] arr2[0] >> " + arr2[0].length);
+		System.out.println("인덱스 1행-열의 길이] arr2[1] >> " + arr2[1].length);
+
 	}
 
 }
