@@ -40,7 +40,7 @@ public class Ex01 {
 	public static void main(String[] args) {
 		Parent s = new Son();
 		s.spend(200000);
-		s.play();
+//		s.play(); //spend, play 둘 다 Son의 메소드인데 spend만 오버라이딩 된 메소드이기때문에 사용가능
 		System.out.println();
 		
 		Daughter d = new Daughter();
