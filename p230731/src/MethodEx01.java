@@ -15,17 +15,19 @@ public class MethodEx01 {
 
 	public static void main(String[] args) {
 		System.out.println("== main method 시작 ==");
-		increment(5);
-		System.out.println("== main method 종료 ==");
+		int num = increment(5);
+		
+		System.out.println("== main method 종료 =="+num);
 	}
 
 	// [형태 1] 매개변수 있고, 리턴값 없음
 	// 기능 : 호출하면서 입력한 값을 1증가 후 출력
-	public static void increment(int num) {
-		System.out.println(">> increment method 시작 <<");
+	public static int increment(int num) {
+//		System.out.println(">> increment method 시작 <<");
 		num++;
-		System.out.println("1 증가된 값 >> " + num);
-		System.out.println(">> increment method 종료 <<");
+//		System.out.println("1 증가된 값 >> " + num);
+//		System.out.println(">> increment method 종료 <<");
+		return num;
 	}
 
 }
