@@ -13,6 +13,7 @@ public class Quiz02 {
 			count++;
 			System.out.print("숫자 입력 : ");
 			userNum = scanner.nextInt();
+			
 			if (userNum < random) {
 				System.out.println("컴퓨터의 숫자가 더 큽니다.");
 			} else if (userNum > random) {
