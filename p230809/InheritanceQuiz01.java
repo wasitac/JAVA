@@ -1,6 +1,13 @@
 class Fruit {
 	// field
 	private int count;
+	
+	//constructor
+	public Fruit() {}
+	
+	public Fruit(int count) {
+		this.count = count;
+	}
 
 	// method
 	// getter/setter를 정의해 private field에 접근.
@@ -23,22 +30,24 @@ class Fruit {
 
 class Banana extends Fruit {
 	// [문제 2] 생성자를 이용하여 부모 class Fruit의 count field에 값 설정하시오.
-	public Banana() {
-		
-	}
+	public Banana() {}
 
+//	public Banana(int count) {
+//		setCount(count);
+//	}
+	
 	public Banana(int count) {
-		setCount(count);
+		super(count);
 	}
 
 	// [문제 1] showInfo() 메서드를 오버라이딩(overriding)하시오.
 	// [출력 형태]
 	// 현재 과일은 바나나 입니다.
 	// 바나나는 X개 있습니다.
-
+	@Override
 	public void showInfo() {
 		System.out.println("현재 과일은 바나나 입니다.");
-		System.out.printf("바나나는 %d 개 있습니다.\n", getCount());
+		System.out.printf("바나나는 %d 개 있습니다.\n", super.getCount());
 
 	}
 
