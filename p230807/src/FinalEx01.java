@@ -23,14 +23,14 @@ public class FinalEx01 {
 		final float PI = 3.14F;
 		//PI = 5.5F		//error
 		// 변수 선언
-		final int num;
+		final int NUM;
 
 		// 초기화
-		num = 5;
+		NUM = 5;
 
 		// 값 변경 error
-//		num = 7;
-
+//		NUM = 7;
+		System.out.println(NUM);
 	}
 
 }

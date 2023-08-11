@@ -44,7 +44,7 @@ class Apple extends Fruit {
 
 	@Override
 	public String toString() {
-		return "[Apple] 나는 사과다";
+		return "[Apple] 나는 사과다.";
 	}
 	
 	public void showInfo() {
@@ -55,6 +55,11 @@ class Apple extends Fruit {
 	}	
 	
 }
+
+class Mango extends Fruit {
+	//
+}
+
 public class Ex04 {
 
 	public static void main(String[] args) {
@@ -68,6 +73,7 @@ public class Ex04 {
 		
 		fruitInfo(new Banana("레드 바나나", 10));
 		fruitInfo(new Apple("홍옥", 5));
+		fruitInfo(new Mango());
 	}
 	
 	public static void fruitInfo(Fruit fruit) {
@@ -75,7 +81,7 @@ public class Ex04 {
 		
 		if(fruit instanceof Banana)
 			((Banana)fruit).nameAndCount();
-		if(fruit instanceof Apple)
+		else if(fruit instanceof Apple)
 			((Apple)fruit).showInfo();
 	}
 }

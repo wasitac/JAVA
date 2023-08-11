@@ -57,5 +57,6 @@ public class InstanceEx04 {
 		p1.setAge(26);
 		p1.setName("이지홍");
 		p1.setAddress("서울 서대문구");
+		System.out.println(p1.getAge());
 	}
 }

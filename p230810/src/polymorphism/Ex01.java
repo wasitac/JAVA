@@ -33,6 +33,10 @@ class Son extends Parent {
 		System.out.println("[Son] 용돈 " + money + "원 주세요~");
 	}
 }
+class GSon extends Son {
+	//method
+
+}
 
 class Daughter extends Parent {
 	//method
@@ -81,10 +85,12 @@ public class Ex01 {
 		p3[1].spend(300);
 		
 		System.out.println("-----------------------");
+		p3[0].spend(100);
 		for (Parent p : p3) {
 			if (p instanceof Son)
 				((Son) p).play();
-			if (p instanceof Daughter)
+			//접근연산자가 형변환 연산자보다 우선순위가 높기 때문에 소괄호를 사용해 형변환을 먼저 수행해야한다
+			else if (p instanceof Daughter)
 				((Daughter) p).study();
 		}
 		System.out.println("-----------------------");
@@ -107,7 +113,7 @@ public class Ex01 {
 		System.out.println(s instanceof Son);
 //		System.out.println(s instanceof Daughter);
 		System.out.println(s instanceof Object);
-
+		
 	}
 
 }

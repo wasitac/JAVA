@@ -30,13 +30,13 @@ public class Ex01_2 {
 	public static void main(String[] args) {
 		Parent[] p3 = new Parent[2];
 		p3[0] = new Son();
-		p3[1] = new Daughter();
-
+		p3[1] = new Daughter();	
+		
 		// downcasting 사용
 		for (Parent p : p3) {
 			if (p instanceof Son)
 				((Son) p).play();
-			if (p instanceof Daughter)
+			else if (p instanceof Daughter)
 				((Daughter) p).study();
 		}
 
