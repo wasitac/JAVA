@@ -37,10 +37,10 @@ public class Ex02 {
 			result2 = n1 % n2;
 			System.out.println("몫 : " + result1);
 			System.out.println("나머지 : " + result2);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
+
 		System.out.println("inputData method...끝");
 		scanner.close();
 	}
