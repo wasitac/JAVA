@@ -37,7 +37,6 @@ class Tv extends Product {
 class Buyer {
 	int money = 1000;
 	int bonusPoint = 0;
-	int use = 0;
 	int index = 0;
 	Product[] myProducts = new Product[10];
 
@@ -47,24 +46,37 @@ class Buyer {
 			return;
 		}
 
+		myProducts[index++] = p;
 		this.money -= p.price;
-		this.use += p.price;
 		this.bonusPoint += p.bonusPoint;
 		System.out.println(p + "를 구입하셨습니다");
-		myProducts[index++] = p;
 	}
 
 	void summry() {
-		System.out.println("구입하신 물품의 총금액은 " + use + "만원입니다");
-		System.out.print("구입하신 제품은 ");
+		int use = 0;
+		String itemList = "";
+
+		// for문
+//		for (int i = 0; i < index; i++) {
+//			use += myProducts[i].price;
+//			itemList = itemList.concat(myProducts[i].toString() + (", "));
+//		}
+//		System.out.println("구입하신 물품의 총금액은 " + use + "만원입니다");
+//		System.out.print("구입하신 제품은 " + itemList + "입니다.");
+
+		// 향상된 for문
 		for (Product p : myProducts)
-			if (p != null)
-				System.out.print(p + ", ");
-		System.out.println("입니다.");
+			if (p != null) {
+				use += p.price;
+				itemList = itemList.concat(p.toString() + ", ");
+			}
+
+		System.out.println("구입하신 물품의 총금액은 " + use + "만원입니다");
+		System.out.print("구입하신 제품은 " + itemList + "입니다.");
 	}
 }
 
-public class Ex01_Quiz {
+public class Ex01Quiz {
 
 	public static void main(String[] args) {
 		Buyer b = new Buyer();
@@ -73,6 +85,7 @@ public class Ex01_Quiz {
 		b.buy(new Computer());
 		b.buy(new Computer());
 		b.buy(new Computer());
+//		b.refund();
 		b.buy(new Tv());
 		b.summry();
 

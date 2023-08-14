@@ -1,5 +1,5 @@
-package polymorphism;
 
+package polymorphism;
 class Product {
 	int price;
 	int bonusPoint;
