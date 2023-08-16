@@ -65,12 +65,20 @@ class Buyer {
 //		System.out.print("구입하신 제품은 " + itemList + "입니다.");
 
 		// 향상된 for문
-		for (Product p : myProducts)
-			if (p != null) {
-				use += p.price;
-				itemList = itemList.concat(p.toString() + ", ");
+//		for (Product p : myProducts)
+//			if (p != null) {
+//				use += p.price;
+//				itemList = itemList.concat(p.toString() + ", ");
+//			}
+		//위의 방식과 결과는 같지만 위는 배열의 끝까지 반복하고, 아래는 null을 만나면 바로 탈출함.
+		for (Product p : myProducts) {
+			if (p == null) {
+				break;
 			}
-
+			use += p.price;
+			itemList = itemList.concat(p.toString() + ", ");
+		}
+		
 		System.out.println("구입하신 물품의 총금액은 " + use + "만원입니다");
 		System.out.print("구입하신 제품은 " + itemList + "입니다.");
 	}

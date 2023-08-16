@@ -1,3 +1,4 @@
+package interfacetype;
 abstract class Vehicle {
 	// field
 	int num;

@@ -9,6 +9,7 @@ interface Vehicle {
 
 class Car implements Vehicle {
 	int num;
+	
 	// constructor
 	public Car(int num) {
 		this.num = num;

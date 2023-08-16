@@ -66,6 +66,11 @@ class Apple extends Fruit {
 }
 
 class Mango extends Fruit {
+
+	public Mango(String name, int count) {
+		super(name, count);
+	}
+
 	// method
 	@Override
 	public String toString() {
@@ -87,7 +92,7 @@ public class Ex04 {
 	public static void main(String[] args) {
 		fruitInfo(new Banana("레드 바나나", 10));
 		fruitInfo(new Apple("홍옥", 5));
-		fruitInfo(new Mango());
+		fruitInfo(new Mango("망고", 3));
 	}
 
 	public static void fruitInfo(Fruit fruit) {
