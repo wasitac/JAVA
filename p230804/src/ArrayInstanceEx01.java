@@ -29,7 +29,8 @@ public class ArrayInstanceEx01 {
 				new Student(32, "park"), 
 				new Student(55, "lee")
 				};
-
+		
+		
 //		System.out.println("smart >> " + smart);
 //		System.out.println("smart[0] >> " + smart[0]);
 
