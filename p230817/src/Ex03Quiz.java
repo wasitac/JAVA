@@ -1,5 +1,4 @@
 
-
 class Pattern {
 	private static Pattern member_field = new Pattern();
 
@@ -7,28 +6,24 @@ class Pattern {
 	private Pattern() {
 	}
 
-	public void name() {
-
-	}
-	//왜static이어야한다고??
+	// 왜static이어야한다고??
 	public static Pattern getPattern() {
 		System.out.println("[Pattern class 내 member_field >> " + member_field);
 		return member_field;
 	}
-	
+
 	@Override
-	public String toString() {		
+	public String toString() {
 		return "Pattern 클래스입니다.";
 	}
-	
+
 	// [문제] count field 추가
 	private int count = 100;
 
 	public int getCount() {
 		return count;
 	};
-	
-	
+
 }
 
 public class Ex03Quiz {
