@@ -11,13 +11,12 @@ class Wrap<T> {
 	}
 }
 
+//왜 super를 사용할 때는 형변환이 필요하다고?
 public class Ex06 {
 	public static void unwrapGift(Wrap<? super Pen> wrap) {
-		//왜 super를 사용할 때는 형변환이 필요하다고?
 		Thing thing = (Thing)wrap.unwrap();
 		System.out.println("선물 개봉합니다.");
-		
-		
+
 	}
 	public static void main(String[] args) {
 		Wrap<Pen> pen = new Wrap<Pen>();
