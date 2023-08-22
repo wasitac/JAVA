@@ -11,6 +11,10 @@ public class AnimalInfo {
 		this.age = age;
 	}
 
+	public int getAge() {
+		return age;
+	}
+
 	// method
 	public String getName() {
 		return name;
