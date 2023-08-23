@@ -2,10 +2,10 @@ package book;
 
 import java.util.Scanner;
 
-	//bookmanager class
-	//arraylist 사용하지 않습니다
-	//deleteData 구현
-	//searchData 구현
+//bookmanager class
+//arraylist 사용하지 않습니다
+//deleteData 구현
+//searchData 구현
 
 public class BookManager {
 	public static Scanner scanner = new Scanner(System.in);
@@ -14,9 +14,7 @@ public class BookManager {
 	private int index = 0;
 
 	// 이름을 입력받고 배열에 같은 이름이 있으면 해당 인덱스를 반환, 없으면 -1을 반환하는 메서드
-// 이름을 어떻게 지어야할까 여부를 묻기도 하지만 여부보다 좀 더 큰 범위니까 is보다는 get이 나을까 getIndexOfName 
-// 이 클래스 안에서만 쓰는데 public을 적는게 맞나?
-	private int isTarget(String name) {
+	private int search(String name) {
 		int target = -1;
 		for (int i = 0; i < index; i++) {
 			if (infoStorage[i].getName().equals(name)) {
@@ -33,7 +31,7 @@ public class BookManager {
 		System.out.print("1. 이름 : ");
 		String name = scanner.next();
 		// 이름 중복 검사
-		if (isTarget(name) == -1) {
+		if (search(name) == -1) {
 			System.out.print("2. 나이 : ");
 			int age = scanner.nextInt();
 			infoStorage[index++] = new AnimalInfo(name, age);
@@ -50,7 +48,7 @@ public class BookManager {
 		// 없으면 문구 출력 : 해당 데이터는 없습니다.
 		System.out.print("삭제할 이름을 입력하세요...");
 		String name = scanner.next();
-		int target = isTarget(name);
+		int target = search(name);
 
 		if (target != -1) {
 			for (int i = target; i < index; i++) {
@@ -70,16 +68,29 @@ public class BookManager {
 		// 없으면 문구 출력 : 해당 데이터는 없습니다.
 		System.out.print("검색할 이름을 입력하세요...");
 		String name = scanner.next();
-		int target = isTarget(name);
+		int target = search(name);
 
 		if (target != -1) {
 // 이미 이름과 나이를 출력해주는 기능이 있는데 사용을 안했다.
-		  //System.out.println("이름 : " + infoStorage[target].getName());
-		  //System.out.println("나이 : " + infoStorage[target].getAge());
+			// System.out.println("이름 : " + infoStorage[target].getName());
+			// System.out.println("나이 : " + infoStorage[target].getAge());
 			infoStorage[target].showAmimalInfo();
 		} else {
 			System.out.println("해당 데이터는 없습니다.\n");
 		}
+	}
+
+	public void updateData() {
+		// 이름을 입력 받은 후, 나이 수정
+		System.out.print("나이를 수정할 대상의 이름을 입력하세요...");
+		String name = scanner.next();
+		System.out.print("수정할 나이를 입력하세요...");
+		int age = scanner.nextInt();
+		int target = search(name);
+		if (target != -1) {
+			infoStorage[target].setAge(age);
+		}
+		System.out.println("수정이 완료됐습니다.");
 	}
 
 	// 요소 출력 -------------------------------------------------------------------
