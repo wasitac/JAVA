@@ -22,7 +22,6 @@ public class Ex04 {
 		Map<String, Object> map = new HashMap<>();
 		map.put("name", hong.getName());
 		map.put("age", hong.getAge());
-		map.
 		System.out.println(hashMap);
 	}
 

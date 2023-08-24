@@ -16,8 +16,11 @@ public class ItemBusinessRule {
 		String itemName = ItemView.INPUT.next();
 		Integer price = ItemView.INPUT.nextInt();
 		int quantity = ItemView.INPUT.nextInt();
-		Item item = new Item(itemName, price, quantity);
 		
+		if (sequence == null)
+			sequence = 0L;
+
+		Item item = new Item(itemName, price, quantity);
 		item.setId(++sequence);
 		store.put(sequence, item);
 		System.out.println("상품 정보가 저장되었습니다.\n");

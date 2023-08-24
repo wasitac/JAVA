@@ -2,13 +2,7 @@ import java.util.Scanner;
 
 import book.BookManager;
 
-/*
- * {과제]4 =============================================
- * 1) main method 내 메뉴를 Menu class 내 show 메서드 정의
- * 2) BookManager class
- * 	2-1) inputData(), deleteData(), searchData() 메서드 내 
- * 		 중복된 코드를 메서드로 구현 : search()
- */
+// 동명이인 추가 금지입니다
 class Menu {
 	public static void show() {
 		System.out.println("[메뉴를 선택하세요]");
