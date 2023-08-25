@@ -1,20 +1,20 @@
 package book;
 
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 
 // ArrayList
 public class BookManager {
 	public static Scanner scanner = new Scanner(System.in);
-	HashSet<AnimalInfo> infoStorage = new HashSet<>();
+	HashMap<String, AnimalInfo> infoStorage = new HashMap<>();
 
-	private AnimalInfo search(String name) {
-		Iterator<AnimalInfo> iter = infoStorage.iterator();
-		while (iter.hasNext()) {
-			AnimalInfo result = iter.next();
-			if (result.getName().equals(name)) {
-				return result;
+	private String search(String name) {
+		Iterator<String> iter = infoStorage.keySet().iterator();
+		while(iter.hasNext()) {
+			String next = iter.next();
+			if (next.equals(name)) {
+				return next;
 			}
 		}
 		return null;
@@ -25,7 +25,7 @@ public class BookManager {
 		System.out.println("<< 정보를 입력하세요 >>");
 		System.out.print("1. 이름 : ");
 		String name = scanner.next();
-		AnimalInfo result = search(name);
+		String result = search(name);
 
 		if (result != null) {
 			System.out.println("중복된 이름이 존재합니다.\n");
@@ -34,7 +34,7 @@ public class BookManager {
 
 		System.out.print("2. 나이 : ");
 		int age = scanner.nextInt();
-		infoStorage.add(new AnimalInfo(name, age));
+		infoStorage.put(name, new AnimalInfo(name, age));
 		System.out.println("데이터 입력이 완료되었습니다.\n");
 
 	}
@@ -43,7 +43,7 @@ public class BookManager {
 	public void deleteData() {
 		System.out.print("삭제할 이름을 입력하세요...");
 		String name = scanner.next();
-		AnimalInfo result = search(name);
+		String result = search(name);
 
 		if (result == null) {
 			System.out.println("해당 데이터는 없습니다.\n");
@@ -59,14 +59,14 @@ public class BookManager {
 	public void searchData() {
 		System.out.print("검색할 이름을 입력하세요...");
 		String name = scanner.next();
-		AnimalInfo result = search(name);
+		String result = search(name);
 
 		if (result == null) {
 			System.out.println("해당 데이터는 없습니다.\n");
 			return;
 		}
 
-		result.showAmimalInfo();
+		infoStorage.get(result).showAmimalInfo();
 		System.out.println("데이터 검색이 완료되었습니다.");
 	}
 
@@ -76,22 +76,24 @@ public class BookManager {
 		String name = scanner.next();
 		System.out.print("수정할 나이를 입력하세요...");
 		int age = scanner.nextInt();
-		AnimalInfo result = search(name);
+		String result = search(name);
 
 		if (result == null) {
 			System.out.println("해당 데이터는 없습니다.\n");
 			return;
 		}
 
-		result.setAge(age);
+		infoStorage.get(result).setAge(age);
 		System.out.println("수정이 완료됐습니다.");
 	}
 
 	// 요소 출력 -------------------------------------------------------------------
 	public void showBook() {
 		System.out.println("<< 저장 목록 >>");
-		for (AnimalInfo animalInfo : infoStorage) {
-			animalInfo.showAmimalInfo();
+		Iterator<String> iter = infoStorage.keySet().iterator();
+		while(iter.hasNext()) {
+			String next = iter.next();
+			infoStorage.get(next).showAmimalInfo();
 		}
 	}
 }
