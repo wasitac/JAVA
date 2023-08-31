@@ -7,7 +7,7 @@ public class ItemBusinessRule {
 
 	// field
 	private static final Map<Long, Item> store = new HashMap<Long, Item>();
-	private Long sequence = 0L;
+	private static Long sequence = 0L;
 
 	// method
 	// 저장
@@ -67,11 +67,11 @@ public class ItemBusinessRule {
 		if (store != null) {
 			store.remove(itemId);
 			System.out.printf("%d번 상품이 삭제되었습니다.", itemId);
+			System.out.println("삭제가 완료되었습니다.\n");
 		} else {
 			System.out.println("해당 상품이 없어서 삭제는 진행하지 않습니다.\n");
 			return;
 		}
-		System.out.println("삭제가 완료되었습니다.\n");
 
 	}
 

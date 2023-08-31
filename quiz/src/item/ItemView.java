@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ItemView {
 	// field
-	public static Scanner INPUT = new Scanner(System.in);
+	public static final Scanner INPUT = new Scanner(System.in);
 	
 	// method
 	public static void showMenu() {

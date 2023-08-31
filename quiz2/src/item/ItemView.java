@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class ItemView {
 	// field
-	public static Scanner INPUT = new Scanner(System.in);
-	
+	public static final Scanner INPUT = new Scanner(System.in);
+
 	// method
 	public static void showMenu() {
 		System.out.println("<< 상품 관리 >>");
@@ -17,6 +17,5 @@ public class ItemView {
 		System.out.println("6. 상품 전체 삭제");
 		System.out.println("7. 프로그램 종료");
 		System.out.print("\n원하는 기능을 선택하세요...");
-		
 	}
 }

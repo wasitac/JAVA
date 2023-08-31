@@ -18,10 +18,14 @@ public class Item {
 	public Long getId() {
 		return id;
 	}
+	public String getName() {
+		return itemName;
+	}
 	
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
