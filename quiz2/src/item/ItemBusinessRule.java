@@ -14,7 +14,7 @@ public class ItemBusinessRule {
 	// method
 	public Item hasItem(long itemId) {
 		Item item = store.get(itemId);
-		if (item == null) 
+		if (item == null)
 			System.out.printf("아이디가 %d인 상품이 없습니다.\n", itemId);
 		return item;
 	}
@@ -58,7 +58,9 @@ public class ItemBusinessRule {
 		System.out.print("수정하기 원하는 아이디 입력하세요...");
 		long itemId = INPUT.nextLong();
 		Item item = hasItem(itemId);
-
+		if(item == null)
+			return;
+		
 		System.out.print("가격, 수량을 입력하세요...");
 		Integer price = INPUT.nextInt();
 		int quantity = INPUT.nextInt();
