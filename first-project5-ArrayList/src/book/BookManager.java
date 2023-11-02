@@ -35,6 +35,7 @@ public class BookManager {
 		int age = scanner.nextInt();
 		infoStorage.add(new AnimalInfo(name, age));
 		System.out.println("데이터 입력이 완료되었습니다.\n");
+		System.out.println(infoStorage);
 
 	}
 
