@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
-// ArrayList
+// HashSet
 public class BookManager {
 	public static Scanner scanner = new Scanner(System.in);
 	HashSet<AnimalInfo> infoStorage = new HashSet<>();
