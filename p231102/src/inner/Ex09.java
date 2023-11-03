@@ -31,16 +31,21 @@ public class Ex09 {
 		System.out.println("내림차순 정렬 후 : " + hangul);
 		
 		// [오름차순 정렬 3] Comparator 인터페이스 구현
-		Comparator<String> comparator = new Comparator<String>() {
-			
-			@Override
-			public int compare(String o1, String o2) {
-				// [오름차순]
-				return o1.compareTo(o2);
-				// [내림차순]
-//				return o2.compartTo(o1);
-			}
-		};
+//		Comparator<String> comparator = new Comparator<String>() {
+//			
+//			@Override
+//			public int compare(String o1, String o2) {
+//				// [오름차순]
+//				return o1.compareTo(o2);
+//				// [내림차순]
+////				return o2.compartTo(o1);
+//			}
+//		};
+		
+		// [문제]람다로 변경
+		Comparator<String> comparator = (String o1, String o2) -> o1.compareTo(o2);
+		hangul.sort(comparator);
+		System.out.println("[람다] 오름차순 정렬 후 : " + hangul);
 	}
 
 }

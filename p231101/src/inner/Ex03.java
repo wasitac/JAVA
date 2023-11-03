@@ -33,8 +33,8 @@ public class Ex03 {
 		in2.setInnerName("4");
 		in.showAllName();
 	
-		in2.setOuterName("박보검");
 		in2.showAllName();
+		in2.setOuterName("박보검");
 
 	}
 

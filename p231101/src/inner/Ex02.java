@@ -23,7 +23,7 @@ public class Ex02 {
 		OuterTwo.InnerTwo in = out.new InnerTwo();
 		in.setName("홍");
 		System.out.println(in.getName());
-		
+	System.out.println(out.name);	
 	}
 	
 

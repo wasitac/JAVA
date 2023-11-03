@@ -18,14 +18,16 @@ public class Ex07 {
 		spaceOne.youKnow();
 		
 		// 2. [anonymous class] 인터페이스 구현
-		Space spaceTwo = new Space() {
+//		Space spaceTwo = new Space() {
+//			@Override
+//			public void youKnow() {
+//				System.out.println("우리가 있는 태양계는 우리 은하에 속해 있습니다");
+//			}
+//		};
+//		
+		// [문제] 위 2를 람다로 변경
+		Space spaceTwo = () -> System.out.println("[람 다] 우리가 있는 태양계는 우리 은하에 속해 있습니다");
 			
-			@Override
-			public void youKnow() {
-				System.out.println("우리가 있는 태양계는 우리 은하에 속해 있습니다");
-			}
-		};
-		
 		spaceTwo.youKnow();
 	}
 

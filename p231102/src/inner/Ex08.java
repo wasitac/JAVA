@@ -20,12 +20,15 @@ public class Ex08 {
 		Banana banana = new Banana();
 		
 		// 2. [Anonymous class] 인수
-		banana.buy(new Box() {
-			@Override
-			public void boxing() {
-				System.out.println("바나나를 포장합니다.");
-			}
-		});
+//		banana.buy(new Box() {
+//			@Override
+//			public void boxing() {
+//				System.out.println("바나나를 포장합니다.");
+//			}
+//		});
+		// [문제] 람다로 변경
+		banana.buy(()-> System.out.println("[람다] 바나나를 포장합니다.")
+		);
 	}
 
 }

@@ -43,42 +43,36 @@ public class QuizAnonymous {
 		hashSet.add(new Person("홍길동", 29));
 		hashSet.add(new Person("박보검", 35));
 		hashSet.add(new Person("이미자", 52));
-		hashSet.add(new Person("ㄹ", 52));
-		hashSet.add(new Person("ㅍ", 52));
-		hashSet.add(new Person("ㄷ", 52));
-		hashSet.add(new Person("ㄴ", 52));
-		hashSet.add(new Person("ㅋ", 52));
 
-		ArrayList<Person> arrayList = new ArrayList<>();
-		arrayList.addAll(hashSet);
-//		Iterator<Person> iter = hashSet.iterator();
-//		while (iter.hasNext()) {
-//			arrayList.add(iter.next());
-//		}
+		ArrayList<Person> arrayList = new ArrayList<>(hashSet);
 		
+
 		// [문제] 이름을 기준으로 정렬
-		Comparator<String> comparator = new Comparator<String>() {
+		Comparator<Person> comparator = new Comparator<>() {
 			@Override
-			public int compare(String o1, String o2) {
-				return o1.compareTo(o2);
+			public int compare(Person o1, Person o2) {
+				return o1.getName().compareTo(o2.getName());
 			}
 		};
-		
-		
-		for(int i = 0; i<arrayList.size()-i; i++) {
-			if(0 < comparator.compare(arrayList.get(i).getName(), arrayList.get(i+1).getName())) {
-				//교체
-				System.out.println("..."+arrayList.get(i).getName());
-				Person small = arrayList.get(i+1);
-				arrayList.remove(small);
-				arrayList.add(i, small);
-			};
-		}
-		
+
+//		for (int j = 0; j < arrayList.size(); j++) {
+//			int cnt = 0;
+//			for (int i = 0; i < arrayList.size() - 1; i++) {
+//				if (0 < comparator.compare(arrayList.get(i).getName(), arrayList.get(i + 1).getName())) {
+//					// 교체
+//					Person small = arrayList.get(i + 1);
+//					arrayList.remove(small);
+//					arrayList.add(i, small);
+//					cnt++;
+//				}
+//			}
+//			if (cnt == 0)
+//				break;
+//		}
+		arrayList.sort(comparator);
 		for (Iterator<Person> iterator = arrayList.iterator(); iterator.hasNext();) {
 			System.out.println(iterator.next().getName());
 		}
-		
-		
+
 	}
 }
