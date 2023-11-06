@@ -36,10 +36,8 @@ public class ConsumerEx02 {
 		
 		
 		// [문제] 문자열을 인수로 입력 받은 후, 공백 기준으로 두 번째 문자열 출력
-		Consumer<String> getSecondWord = t -> {
-				String[] s5 = t.split(" ", 3);
-				System.out.println(s5[1]);
-		};
+		Consumer<String> getSecondWord = t -> 
+				System.out.println(t.split(" ")[1]);
 		
 		getSecondWord.accept("오늘도 즐거운 하루");
 	}

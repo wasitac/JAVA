@@ -50,23 +50,21 @@ public class QuizPredicate {
 
 		// 나이가 30세 이상인 사람의 이름 출력
 		// [익명 클래스] anonymous class
-		List<Person> result = filter(person, new Predicate<Person>() {
-			@Override
-			public boolean test(Person t) {
-				return t.getAge() >= 30;
-			}
-		});
+//		List<Person> adult = filter(person, new Predicate<Person>() {
+//			@Override
+//			public boolean test(Person p) {
+//				return p.getAge() >= 30;
+//			}
+//		});
 		
-		for (Person p : result) {
-			System.out.println("[익명] " + p.getName());
-		}
-
 		// [람다] Lambda express
-		List<Person> result2 = filter(person, t -> t.getAge() >= 30);
+		List<Person> adult = filter(person, p -> p.getAge() >= 30);
 		
-		for (Person p : result2) {
+		for (Person p : adult) {
 			System.out.println("[람다] " + p.getName());
 		}
+
+		
 	}
 
 }
