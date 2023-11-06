@@ -55,6 +55,8 @@ public class QuizAnonymous {
 			}
 		};
 
+//		Comparator<Person> comparator = (o1, o2) -> o1.getName().compareTo(o2.getName());
+		
 //		for (int j = 0; j < arrayList.size(); j++) {
 //			int cnt = 0;
 //			for (int i = 0; i < arrayList.size() - 1; i++) {

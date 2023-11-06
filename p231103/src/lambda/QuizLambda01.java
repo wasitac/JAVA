@@ -36,10 +36,10 @@ public class QuizLambda01 {
 		}.max(1, 4));
 
 		// [문제 3] 문제 1을 람다로 표현
-		MaxReturn printMax2 = (int n1, int n2) -> n1 > n2 ? n1 : n2;
+		MaxReturn printMax2 = (n1, n2) -> n1 > n2 ? n1 : n2;
 		System.out.println(printMax2.max(6, 4));
 
 		// [문제 4] 문제 2를 람다로 표현
-		System.out.println(setMax((int n1, int n2) -> n1 > n2 ? n1 : n2).max(4, 9));
+		System.out.println(setMax((n1, n2) -> n1 > n2 ? n1 : n2).max(4, 9));
 	}
 }
